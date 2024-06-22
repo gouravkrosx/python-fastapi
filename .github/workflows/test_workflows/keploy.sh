@@ -4,6 +4,9 @@ sudo docker compose --env-file .env.keploy build
 
 echo "Project built successfully"
 
+docker volume ls
+
+
 export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 
 # Get the Keploy binary
