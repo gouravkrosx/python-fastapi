@@ -10,9 +10,8 @@ export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 curl --silent -o keployE --location https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/0.7.6/enterprise_linux_amd64
 sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/local/bin
 
-ls -a
 
-sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose --env-file .env.keploy up" --containerName "fast-api-app" --delay 30 --apiTimeout 300 --generateGithubActions=false
+sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose --env-file .env.keploy up" --containerName "fast-api-app" --delay 40 --apiTimeout 300 --generateGithubActions=false
 echo "Keploy started in test mode"
 
 all_passed=true
