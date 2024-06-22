@@ -37,10 +37,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 RUN opentelemetry-bootstrap --action=install
 
 # # Download the time freeze agent
-ADD https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/latest/assets/freeze_time_arm64.so /lib/keploy/freeze_time_arm64.so
+ADD https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/latest/assets/freeze_time_amd64.so /lib/keploy/freeze_time_amd64.so
 
 # Set LD_PRELOAD environment variable to use freeze_time_arm64.so
-ENV LD_PRELOAD=/lib/keploy/freeze_time_arm64.so
+ENV LD_PRELOAD=/lib/keploy/freeze_time_amd64.so
 
 # Switch to the non-privileged user to run the application.
 # USER nonroot
