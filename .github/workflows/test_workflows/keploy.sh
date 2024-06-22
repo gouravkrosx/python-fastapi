@@ -9,7 +9,7 @@ sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/l
 echo "Project built successfully"
 
 
-sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose --env-file .env.docker up" --containerName "fast-api-app" --delay 30 --apiTimeout 300 --generateGithubActions=false
+sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose --env-file .env.keploy up" --containerName "fast-api-app" --delay 30 --apiTimeout 300 --generateGithubActions=false
 echo "Keploy started in test mode"
 
 all_passed=true
