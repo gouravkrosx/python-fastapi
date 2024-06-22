@@ -5,7 +5,7 @@ on:
   push:
 
 jobs:
-  node_linux:
+  python_linux:
     runs-on: ubuntu-latest
     environment: secrets  # Ensure you specify the environment if it's an environment-level secret
     steps:

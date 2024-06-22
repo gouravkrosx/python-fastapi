@@ -1,6 +1,6 @@
 
 sudo docker compose --env-file .env.docker build
-export KEPLOY_API_KEY=eBzu6AWJvsmbQ2IvUg==
+export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 
 curl --silent -o keployE --location https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/0.7.6/enterprise_linux_amd64
 sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/local/bin
