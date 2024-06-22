@@ -1,16 +1,18 @@
 
-sudo docker compose --env-file .env.keploy build
+# Build the project locally
+sudo docker compose -f keploy-docker-compose.yaml --env-file .env.keploy build
+
+echo "Project built successfully"
+
 export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 
+# Get the Keploy binary
 curl --silent -o keployE --location https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/0.7.6/enterprise_linux_amd64
 sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/local/bin
 
-# Build the project locally
-echo "Project built successfully"
-
 ls -a
 
-sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose --env-file .env.keploy up" --containerName "fast-api-app" --delay 30 --apiTimeout 300 --generateGithubActions=false
+sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose -f keploy-docker-compose.yaml --env-file .env.keploy up" --containerName "fast-api-app" --delay 30 --apiTimeout 300 --generateGithubActions=false
 echo "Keploy started in test mode"
 
 all_passed=true
