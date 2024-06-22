@@ -1,5 +1,5 @@
 
-sudo docker compose --env-file .env.docker build
+sudo docker compose --env-file .env.keploy build
 export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 
 curl --silent -o keployE --location https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/0.7.6/enterprise_linux_amd64
