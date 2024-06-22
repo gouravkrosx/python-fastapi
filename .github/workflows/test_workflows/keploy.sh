@@ -1,6 +1,6 @@
 
 # Build the project locally
-sudo docker compose -f keploy-docker-compose.yaml --env-file .env.keploy build
+sudo docker compose -f keploy-docker-compose.yaml --env-file .env.keploy.docker build
 
 echo "Project built successfully"
 
@@ -12,7 +12,7 @@ sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/l
 
 ls -a
 
-sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose -f keploy-docker-compose.yaml --env-file .env.keploy up" --containerName "fast-api-app" --delay 30 --apiTimeout 300 --generateGithubActions=false
+sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose -f keploy-docker-compose.yaml --env-file .env.keploy.docker up" --containerName "fast-api-app" --delay 30 --apiTimeout 300 --generateGithubActions=false
 echo "Keploy started in test mode"
 
 all_passed=true

@@ -5,7 +5,7 @@ services:
     image: mysql:latest
     restart: always
     env_file:
-      - .env.keploy
+      - .env.keploy.docker
     environment:
       - MYSQL_USER=${DB_USERNAME}
       - MYSQL_PASSWORD=${DB_PASSWORD}
@@ -47,7 +47,7 @@ services:
     restart: always
     container_name: fast-api-app
     env_file:
-      - ./.env.${ENVIRONMENT_NAME}
+      - ./.env.keploy.${ENVIRONMENT_NAME}
     depends_on:
       wait-for-db:
         condition: service_completed_successfully
