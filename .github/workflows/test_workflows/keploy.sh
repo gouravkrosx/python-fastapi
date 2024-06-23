@@ -2,11 +2,11 @@
 chmod +x ${GITHUB_WORKSPACE}/scripts/keploy-initialize-env.sh
 
 # Initialize the environment
-bash ${GITHUB_WORKSPACE}/scripts/keploy-initialize-env.sh
+${GITHUB_WORKSPACE}/scripts/keploy-initialize-env.sh
 
-# Get into virtual environment
-source .venv/bin/activate
-echo "Activated virtual environment"
+# # Get into virtual environment
+# source .venv/bin/activate
+# echo "Activated virtual environment"
 
 export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 

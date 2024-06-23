@@ -15,8 +15,7 @@ jobs:
       - name: Run the python-fastapi template
         run: |
           chmod +x ${GITHUB_WORKSPACE}/.github/workflows/test_workflows/keploy.sh
-          bash ${GITHUB_WORKSPACE}/.github/workflows/test_workflows/keploy.sh
-        shell: bash
+          ${GITHUB_WORKSPACE}/.github/workflows/test_workflows/keploy.sh
         env:
           GITHUB_TOKEN: ${{ secrets.SECRETS }}
 
