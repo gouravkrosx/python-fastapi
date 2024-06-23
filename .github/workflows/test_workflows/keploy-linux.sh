@@ -4,7 +4,12 @@ cp ${GITHUB_WORKSPACE}/.env.keploy.linux ${GITHUB_WORKSPACE}/.env.local
 # # Build the project locally
 # sh ./scripts/initialize-env.sh
 
+echo "Initializing local python environment"
+python -m venv venv
+
+echo "Activating local python environment"
 . ./venv/bin/activate
+echo "Local python environment activated"
 
 export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 
