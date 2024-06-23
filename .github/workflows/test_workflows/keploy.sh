@@ -1,6 +1,9 @@
 
 chmod +x ${GITHUB_WORKSPACE}/scripts/keploy-initialize-env.sh
 
+# Initialize the environment
+sh ${GITHUB_WORKSPACE}/scripts/keploy-initialize-env.sh
+
 # Get into virtual environment
 . .venv/bin/activate
 echo "Activated virtual environment"
