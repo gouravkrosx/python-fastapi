@@ -1,6 +1,10 @@
 
 chmod +x ${GITHUB_WORKSPACE}/scripts/keploy-initialize-env.sh
 
+# Get into virtual environment
+. .venv/bin/activate
+echo "Activated virtual environment"
+
 export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 
 # Get the Keploy binary
