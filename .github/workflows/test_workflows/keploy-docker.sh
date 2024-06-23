@@ -1,25 +1,20 @@
 
-cp ${GITHUB_WORKSPACE}/.env.keploy.linux ${GITHUB_WORKSPACE}/.env.local
+# Build the project locally
+sudo docker compose --env-file .env.keploy build
 
-# # Build the project locally
-# sh ./scripts/initialize-env.sh
+echo "Project built successfully"
 
-echo "Initializing local python environment"
-python -m venv venv
+docker volume ls
 
-echo "Activating local python environment"
-. ./venv/bin/activate
-echo "Local python environment activated"
 
 export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 
 # Get the Keploy binary
-curl --silent -o keployE --location https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/0.7.7/enterprise_linux_amd64
+curl --silent -o keployE --location https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/0.7.6/enterprise_linux_amd64
 sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/local/bin
 
 
-chmod +x ${GITHUB_WORKSPACE}/scripts/keploy_local_server.sh
-sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "${GITHUB_WORKSPACE}/scripts/keploy_local_server.sh" --delay 20 --apiTimeout 300 --generateGithubActions=false
+sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose --env-file .env.keploy up" --containerName "fast-api-app" --delay 40 --apiTimeout 300 --generateGithubActions=false
 echo "Keploy started in test mode"
 
 all_passed=true

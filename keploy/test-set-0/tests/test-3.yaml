@@ -10,35 +10,35 @@ spec:
         url: http://0.0.0.0:8000/api/users/register
         header:
             Accept: application/json
-            Content-Length: "128"
+            Content-Length: "130"
             Content-Type: application/json
             Host: 0.0.0.0:8000
             User-Agent: curl/7.88.1
         body: |-
             {
                   "name": "Anas Nadeem",
-                  "email": "anas@gmail.com",
-                  "mobile": "1234567890",
+                  "email": "anas11@gmail.com",
+                  "mobile": "9124567890",
                   "password": "Test@123"
                 }
-        timestamp: 2024-06-23T21:31:21.098636531+05:30
+        timestamp: 2024-06-23T20:49:10.651182601+05:30
     resp:
         status_code: 200
         header:
             Content-Length: "70"
             Content-Type: application/json
-            Date: Sun, 23 Jun 2024 16:01:20 GMT
+            Date: Sun, 23 Jun 2024 15:19:10 GMT
             Server: uvicorn
         body: '{"success":true,"message":"User registered successfully.","data":null}'
         status_message: OK
         proto_major: 0
         proto_minor: 0
-        timestamp: 2024-06-23T21:31:23.654639394+05:30
+        timestamp: 2024-06-23T20:49:12.958051422+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1719158483
+    created: 1719155952
 curl: |-
     curl --request POST \
       --url http://0.0.0.0:8000/api/users/register \
@@ -48,7 +48,7 @@ curl: |-
       --header 'Host: 0.0.0.0:8000' \
       --data '{
           "name": "Anas Nadeem",
-          "email": "anas@gmail.com",
-          "mobile": "1234567890",
+          "email": "anas11@gmail.com",
+          "mobile": "9124567890",
           "password": "Test@123"
         }'

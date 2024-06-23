@@ -4,47 +4,38 @@ name: test-7
 spec:
     metadata: {}
     req:
-        method: POST
+        method: GET
         proto_major: 1
         proto_minor: 1
-        url: http://0.0.0.0:8000/api/users/signin
+        url: http://0.0.0.0:8000/api/users/1
         header:
             Accept: application/json
-            Content-Length: "71"
-            Content-Type: application/json
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTkxNjIxMDUsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjR9.0nK97d5XsbCUyNWXa0wjixvdTIh7dIuNMNfHkmvuL2c
             Host: 0.0.0.0:8000
             User-Agent: curl/7.88.1
-        body: |-
-            {
-                  "email": "anas12@gmail.com",
-                  "password": "Test@123"
-                }
-        timestamp: 2024-06-23T20:49:54.418599314+05:30
+        body: ""
+        timestamp: 2024-06-23T21:34:07.263731036+05:30
     resp:
-        status_code: 400
+        status_code: 401
         header:
-            Content-Length: "57"
+            Content-Length: "42"
             Content-Type: application/json
-            Date: Sun, 23 Jun 2024 15:19:53 GMT
+            Date: Sun, 23 Jun 2024 16:04:06 GMT
             Server: uvicorn
-        body: '{"success":false,"message":"No Users found in database."}'
-        status_message: Bad Request
+        body: '{"success":false,"message":"Unauthorized"}'
+        status_message: Unauthorized
         proto_major: 0
         proto_minor: 0
-        timestamp: 2024-06-23T20:49:56.560194014+05:30
+        timestamp: 2024-06-23T21:34:09.316637535+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1719155996
-curl: |-
-    curl --request POST \
-      --url http://0.0.0.0:8000/api/users/signin \
-      --header 'Host: 0.0.0.0:8000' \
+    created: 1719158649
+curl: |
+    curl --request GET \
+      --url http://0.0.0.0:8000/api/users/1 \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTkxNjIxMDUsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjR9.0nK97d5XsbCUyNWXa0wjixvdTIh7dIuNMNfHkmvuL2c' \
       --header 'User-Agent: curl/7.88.1' \
+      --header 'Host: 0.0.0.0:8000' \
       --header 'Accept: application/json' \
-      --header 'Content-Type: application/json' \
-      --data '{
-          "email": "anas12@gmail.com",
-          "password": "Test@123"
-        }'

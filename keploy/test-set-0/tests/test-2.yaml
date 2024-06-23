@@ -1,50 +1,54 @@
 version: api.keploy.io/v1beta1
 kind: Http
-name: test-5
+name: test-2
 spec:
     metadata: {}
     req:
         method: POST
         proto_major: 1
         proto_minor: 1
-        url: http://0.0.0.0:8000/api/users/signin
+        url: http://0.0.0.0:8000/api/users/register
         header:
             Accept: application/json
-            Content-Length: "69"
+            Content-Length: "130"
             Content-Type: application/json
             Host: 0.0.0.0:8000
             User-Agent: curl/7.88.1
         body: |-
             {
-                  "email": "anas@gmail.com",
+                  "name": "Anas Nadeem",
+                  "email": "anas10@gmail.com",
+                  "mobile": "9114567890",
                   "password": "Test@123"
                 }
-        timestamp: 2024-06-23T21:31:45.56216752+05:30
+        timestamp: 2024-06-23T20:49:00.410757946+05:30
     resp:
         status_code: 200
         header:
-            Content-Length: "222"
+            Content-Length: "70"
             Content-Type: application/json
-            Date: Sun, 23 Jun 2024 16:01:45 GMT
+            Date: Sun, 23 Jun 2024 15:19:00 GMT
             Server: uvicorn
-        body: '{"success":true,"message":"User logged in successfully.","data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTkxNjIxMDUsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjR9.0nK97d5XsbCUyNWXa0wjixvdTIh7dIuNMNfHkmvuL2c"}}'
+        body: '{"success":true,"message":"User registered successfully.","data":null}'
         status_message: OK
         proto_major: 0
         proto_minor: 0
-        timestamp: 2024-06-23T21:31:47.852495504+05:30
+        timestamp: 2024-06-23T20:49:02.793904411+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1719158507
+    created: 1719155942
 curl: |-
     curl --request POST \
-      --url http://0.0.0.0:8000/api/users/signin \
-      --header 'Host: 0.0.0.0:8000' \
-      --header 'User-Agent: curl/7.88.1' \
+      --url http://0.0.0.0:8000/api/users/register \
       --header 'Accept: application/json' \
       --header 'Content-Type: application/json' \
+      --header 'Host: 0.0.0.0:8000' \
+      --header 'User-Agent: curl/7.88.1' \
       --data '{
-          "email": "anas@gmail.com",
+          "name": "Anas Nadeem",
+          "email": "anas10@gmail.com",
+          "mobile": "9114567890",
           "password": "Test@123"
         }'
