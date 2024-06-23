@@ -1,5 +1,5 @@
 
-cp ${GITHUB_WORKSPACE}.env.keploy.linux ${GITHUB_WORKSPACE}.env.local
+cp ${GITHUB_WORKSPACE}/.env.keploy.linux ${GITHUB_WORKSPACE}/.env.local
 
 # # Build the project locally
 # sh ./scripts/initialize-env.sh
