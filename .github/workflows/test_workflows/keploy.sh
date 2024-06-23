@@ -46,8 +46,8 @@ done
 
 # Check the overall test status and exit accordingly
 if [ "$all_passed" = true ]; then
-    python3 -m coverage combine
-    python3 -m coverage report
+    python -m coverage combine
+    python -m coverage report
     echo "All tests passed"
     exit 0
 else
