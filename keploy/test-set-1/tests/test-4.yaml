@@ -10,35 +10,35 @@ spec:
         url: http://0.0.0.0:8000/api/users/register
         header:
             Accept: application/json
-            Content-Length: "108"
+            Content-Length: "130"
             Content-Type: application/json
             Host: 0.0.0.0:8000
             User-Agent: curl/7.88.1
         body: |-
             {
-              "name": "Anas Nadeem",
-              "email": "anas@gmail.com",
-              "mobile": "1234567890",
-              "password": "Test@123"
-            }
-        timestamp: 2024-06-21T07:59:30.634257607Z
+                  "name": "Anas Nadeem",
+                  "email": "anas12@gmail.com",
+                  "mobile": "9134567890",
+                  "password": "Test@123"
+                }
+        timestamp: 2024-06-23T20:49:19.788168982+05:30
     resp:
         status_code: 400
         header:
-            Content-Length: "55"
+            Content-Length: "63"
             Content-Type: application/json
-            Date: Fri, 21 Jun 2024 07:59:30 GMT
+            Date: Sun, 23 Jun 2024 15:19:19 GMT
             Server: uvicorn
-        body: '{"success":false,"message":"Email already registered."}'
+        body: '{"success":false,"message":"Mobile number already registered."}'
         status_message: Bad Request
         proto_major: 0
         proto_minor: 0
-        timestamp: 2024-06-21T07:59:32.79778412Z
+        timestamp: 2024-06-23T20:49:22.009465474+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1718956772
+    created: 1719155962
 curl: |-
     curl --request POST \
       --url http://0.0.0.0:8000/api/users/register \
@@ -47,8 +47,8 @@ curl: |-
       --header 'Host: 0.0.0.0:8000' \
       --header 'User-Agent: curl/7.88.1' \
       --data '{
-      "name": "Anas Nadeem",
-      "email": "anas@gmail.com",
-      "mobile": "1234567890",
-      "password": "Test@123"
-    }'
+          "name": "Anas Nadeem",
+          "email": "anas12@gmail.com",
+          "mobile": "9134567890",
+          "password": "Test@123"
+        }'

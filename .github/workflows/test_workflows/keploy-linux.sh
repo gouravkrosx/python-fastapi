@@ -19,7 +19,7 @@ sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/l
 
 
 chmod +x ${GITHUB_WORKSPACE}/scripts/keploy_local_server.sh
-sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "${GITHUB_WORKSPACE}/scripts/keploy_local_server.sh" --delay 40 --apiTimeout 300 --generateGithubActions=false
+sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "${GITHUB_WORKSPACE}/scripts/keploy_local_server.sh" --delay 20 --apiTimeout 300 --generateGithubActions=false
 echo "Keploy started in test mode"
 
 all_passed=true

@@ -1,6 +1,6 @@
 version: api.keploy.io/v1beta1
 kind: Http
-name: test-16
+name: test-17
 spec:
     metadata: {}
     req:
@@ -13,27 +13,27 @@ spec:
             Host: 0.0.0.0:8000
             User-Agent: curl/7.88.1
         body: ""
-        timestamp: 2024-06-21T08:01:54.915198236Z
+        timestamp: 2024-06-23T21:37:13.881107496+05:30
     resp:
         status_code: 200
         header:
             Content-Length: "40"
             Content-Type: application/json
-            Date: Fri, 21 Jun 2024 08:01:54 GMT
+            Date: Sun, 23 Jun 2024 16:07:13 GMT
             Server: uvicorn
         body: '{"response":"service up and running..!"}'
         status_message: OK
         proto_major: 0
         proto_minor: 0
-        timestamp: 2024-06-21T08:01:57.003054472Z
+        timestamp: 2024-06-23T21:37:15.928944869+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1718956917
+    created: 1719158835
 curl: |
     curl --request GET \
       --url http://0.0.0.0:8000/api/home/ \
-      --header 'Host: 0.0.0.0:8000' \
       --header 'User-Agent: curl/7.88.1' \
       --header 'Accept: application/json' \
+      --header 'Host: 0.0.0.0:8000' \

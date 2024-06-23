@@ -1,6 +1,6 @@
 version: api.keploy.io/v1beta1
 kind: Http
-name: test-13
+name: test-15
 spec:
     metadata: {}
     req:
@@ -10,32 +10,32 @@ spec:
         url: http://0.0.0.0:8000/api/users/4/secure-route/
         header:
             Accept: application/json
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTg4NzI4OTgsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjF9.sWPL3gKvyC9kC6drp1__XrVNGIWp4qhYxzD75ITlXVw
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTkxNjIyNTMsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjR9.vY_YDmzoRkWiZ07LxgtLRMqOeZo5nvlHpWXiToVSZzY
             Host: 0.0.0.0:8000
             User-Agent: curl/7.88.1
         body: ""
-        timestamp: 2024-06-21T08:01:22.544769683Z
+        timestamp: 2024-06-23T21:37:01.468433256+05:30
     resp:
-        status_code: 401
+        status_code: 200
         header:
             Content-Length: "51"
             Content-Type: application/json
-            Date: Fri, 21 Jun 2024 08:01:21 GMT
+            Date: Sun, 23 Jun 2024 16:07:01 GMT
             Server: uvicorn
-        body: '{"success":false,"message":"Signature has expired"}'
-        status_message: Unauthorized
+        body: '{"message":"If you see this, you''re authenticated"}'
+        status_message: OK
         proto_major: 0
         proto_minor: 0
-        timestamp: 2024-06-21T08:01:24.611161034Z
+        timestamp: 2024-06-23T21:37:03.544483249+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1718956884
+    created: 1719158823
 curl: |
     curl --request GET \
       --url http://0.0.0.0:8000/api/users/4/secure-route/ \
       --header 'Host: 0.0.0.0:8000' \
       --header 'User-Agent: curl/7.88.1' \
       --header 'Accept: application/json' \
-      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTg4NzI4OTgsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjF9.sWPL3gKvyC9kC6drp1__XrVNGIWp4qhYxzD75ITlXVw' \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTkxNjIyNTMsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjR9.vY_YDmzoRkWiZ07LxgtLRMqOeZo5nvlHpWXiToVSZzY' \

@@ -10,45 +10,45 @@ spec:
         url: http://0.0.0.0:8000/api/users/register
         header:
             Accept: application/json
-            Content-Length: "110"
+            Content-Length: "128"
             Content-Type: application/json
             Host: 0.0.0.0:8000
             User-Agent: curl/7.88.1
         body: |-
             {
-              "name": "Anas Nadeem",
-              "email": "anas12@gmail.com",
-              "mobile": "9134567890",
-              "password": "Test@123"
-            }
-        timestamp: 2024-06-20T12:02:55.683006035Z
+                  "name": "Anas Nadeem",
+                  "email": "anas@gmail.com",
+                  "mobile": "1234567890",
+                  "password": "Test@123"
+                }
+        timestamp: 2024-06-23T21:31:30.828282275+05:30
     resp:
         status_code: 400
         header:
-            Content-Length: "63"
+            Content-Length: "55"
             Content-Type: application/json
-            Date: Thu, 20 Jun 2024 12:02:55 GMT
+            Date: Sun, 23 Jun 2024 16:01:30 GMT
             Server: uvicorn
-        body: '{"success":false,"message":"Mobile number already registered."}'
+        body: '{"success":false,"message":"Email already registered."}'
         status_message: Bad Request
         proto_major: 0
         proto_minor: 0
-        timestamp: 2024-06-20T12:02:57.93794214Z
+        timestamp: 2024-06-23T21:31:33.02624731+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1718884977
+    created: 1719158493
 curl: |-
     curl --request POST \
       --url http://0.0.0.0:8000/api/users/register \
-      --header 'Host: 0.0.0.0:8000' \
-      --header 'User-Agent: curl/7.88.1' \
       --header 'Accept: application/json' \
       --header 'Content-Type: application/json' \
+      --header 'User-Agent: curl/7.88.1' \
+      --header 'Host: 0.0.0.0:8000' \
       --data '{
-      "name": "Anas Nadeem",
-      "email": "anas12@gmail.com",
-      "mobile": "9134567890",
-      "password": "Test@123"
-    }'
+          "name": "Anas Nadeem",
+          "email": "anas@gmail.com",
+          "mobile": "1234567890",
+          "password": "Test@123"
+        }'

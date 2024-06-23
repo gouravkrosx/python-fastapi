@@ -4,38 +4,51 @@ name: test-2
 spec:
     metadata: {}
     req:
-        method: GET
+        method: POST
         proto_major: 1
         proto_minor: 1
-        url: http://0.0.0.0:8000/api/users/1
+        url: http://0.0.0.0:8000/api/users/register
         header:
             Accept: application/json
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTg4NzI4OTgsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjF9.sWPL3gKvyC9kC6drp1__XrVNGIWp4qhYxzD75ITlXVw
+            Content-Length: "130"
+            Content-Type: application/json
             Host: 0.0.0.0:8000
             User-Agent: curl/7.88.1
-        body: ""
-        timestamp: 2024-06-21T07:59:13.977059669Z
+        body: |-
+            {
+                  "name": "Anas Nadeem",
+                  "email": "anas10@gmail.com",
+                  "mobile": "9114567890",
+                  "password": "Test@123"
+                }
+        timestamp: 2024-06-23T20:49:00.410757946+05:30
     resp:
-        status_code: 401
+        status_code: 200
         header:
-            Content-Length: "51"
+            Content-Length: "70"
             Content-Type: application/json
-            Date: Fri, 21 Jun 2024 07:59:13 GMT
+            Date: Sun, 23 Jun 2024 15:19:00 GMT
             Server: uvicorn
-        body: '{"success":false,"message":"Signature has expired"}'
-        status_message: Unauthorized
+        body: '{"success":true,"message":"User registered successfully.","data":null}'
+        status_message: OK
         proto_major: 0
         proto_minor: 0
-        timestamp: 2024-06-21T07:59:16.002524034Z
+        timestamp: 2024-06-23T20:49:02.793904411+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1718956756
-curl: |
-    curl --request GET \
-      --url http://0.0.0.0:8000/api/users/1 \
-      --header 'User-Agent: curl/7.88.1' \
+    created: 1719155942
+curl: |-
+    curl --request POST \
+      --url http://0.0.0.0:8000/api/users/register \
       --header 'Accept: application/json' \
-      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTg4NzI4OTgsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjF9.sWPL3gKvyC9kC6drp1__XrVNGIWp4qhYxzD75ITlXVw' \
+      --header 'Content-Type: application/json' \
       --header 'Host: 0.0.0.0:8000' \
+      --header 'User-Agent: curl/7.88.1' \
+      --data '{
+          "name": "Anas Nadeem",
+          "email": "anas10@gmail.com",
+          "mobile": "9114567890",
+          "password": "Test@123"
+        }'

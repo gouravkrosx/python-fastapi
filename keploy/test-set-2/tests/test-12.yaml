@@ -10,32 +10,32 @@ spec:
         url: http://0.0.0.0:8000/api/users/4
         header:
             Accept: application/json
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTg5NjA0MjYsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjR9.A_shJpATYtGXBnLD9zRDogHn9pWmI9_Ev9FXHW3qfj0
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTkxNjIyNTMsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjR9.vY_YDmzoRkWiZ07LxgtLRMqOeZo5nvlHpWXiToVSZzY
             Host: 0.0.0.0:8000
             User-Agent: curl/7.88.1
         body: ""
-        timestamp: 2024-06-21T08:01:12.681300832Z
+        timestamp: 2024-06-23T21:35:42.080244689+05:30
     resp:
         status_code: 200
         header:
             Content-Length: "76"
             Content-Type: application/json
-            Date: Fri, 21 Jun 2024 08:01:12 GMT
+            Date: Sun, 23 Jun 2024 16:05:41 GMT
             Server: uvicorn
         body: '{"id":4,"name":"Anas Nadeem","email":"anas@gmail.com","mobile":"1234567890"}'
         status_message: OK
         proto_major: 0
         proto_minor: 0
-        timestamp: 2024-06-21T08:01:14.853361418Z
+        timestamp: 2024-06-23T21:35:44.225644538+05:30
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1718956874
+    created: 1719158744
 curl: |
     curl --request GET \
       --url http://0.0.0.0:8000/api/users/4 \
-      --header 'Host: 0.0.0.0:8000' \
       --header 'User-Agent: curl/7.88.1' \
       --header 'Accept: application/json' \
-      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTg5NjA0MjYsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjR9.A_shJpATYtGXBnLD9zRDogHn9pWmI9_Ev9FXHW3qfj0' \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTkxNjIyNTMsInN1YiI6ImFuYXNAZ21haWwuY29tIiwiaWQiOjR9.vY_YDmzoRkWiZ07LxgtLRMqOeZo5nvlHpWXiToVSZzY' \
+      --header 'Host: 0.0.0.0:8000' \
