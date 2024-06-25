@@ -11,7 +11,7 @@ sh ${GITHUB_WORKSPACE}/scripts/keploy-initialize-env.sh
 export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 
 # Get the Keploy binary
-curl --silent -o keployE --location https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/0.7.8/enterprise_linux_amd64
+curl --silent -o keployE --location https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/0.7.10/enterprise_linux_amd64
 sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/local/bin
 
 
