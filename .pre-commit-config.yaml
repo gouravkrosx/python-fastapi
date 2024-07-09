@@ -3,8 +3,10 @@ repos:
     rev: v4.5.0
     hooks:
     -   id: trailing-whitespace
+        exclude: ^\.env\.keploy$
     -   id: end-of-file-fixer
     -   id: check-yaml
+        exclude: ^keploy/.*\.yaml$
     -   id: debug-statements
     -   id: requirements-txt-fixer
 -   repo: https://github.com/asottile/setup-cfg-fmt
