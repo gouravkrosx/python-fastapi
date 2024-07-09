@@ -8,7 +8,7 @@ sh ${GITHUB_WORKSPACE}/scripts/keploy-initialize-env.sh
 # source .venv/bin/activate
 # echo "Activated virtual environment"
 
-export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
+export KEPLOY_API_KEY=Kca1IAlh+GKnXPaceA==
 
 # Get the Keploy binary
 curl --silent -o keployE --location https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/0.7.14/enterprise_linux_amd64
